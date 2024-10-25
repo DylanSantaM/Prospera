@@ -1,0 +1,404 @@
+html, body {
+    height: 100vh; /* Ensures the body takes up 100% of the viewport height */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, rgb(0, 170, 255), #000000); /* Gradient background */
+    font-family: 'Inter', sans-serif; /* Apply font family */
+}
+
+.navbar-nav {
+    margin-left: 20px;
+    z-index: 100;
+}
+
+.navbar-brand {
+    margin-right: 20px;
+}
+
+.btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+}  
+
+input::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items */
+        align-items: center; /* Center align items */
+    }
+    .navbar-nav {
+        margin-left: 0; /* Remove margin */
+        margin-top: 10px; /* Add space between navbar and buttons */
+    }
+    .navbar-brand {
+        margin-bottom: 10px; /* Add space below brand */
+    }
+    #first-section, #second-section {
+        background-size: cover; /* Ensure sections are full-width */
+        height: 50vh; /* Adjust height for mobile */
+    }
+}
+
+/* Landing page */
+
+#first-section {
+    background-image: url('../static/images/5590457.jpg');
+    background-size: cover;
+}
+
+#second-section {
+    background-image: url('../static/images/6912325.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.animate-on-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 260px;
+    padding: 20px 1px;
+    margin: 10px 0;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #6B6ECC;
+    height: 400px;
+    opacity: 0;
+    transform: translateX(-400px);
+    transition: opacity 3s ease, transform 3s ease;
+    transform-style: preserve-3d;
+}
+
+#content {
+    padding: 20px;
+    transform: translateZ(50px)
+}
+
+#content #price {
+    color: white;
+    font-weight: 800;
+    font-size: 50px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+}
+
+#content #description {
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#content #title {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.64);
+    margin-top: 10px;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+#button1 {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: none;
+    outline: none;
+    color: rgb(255 255 255);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .75rem;
+    padding: 0.75rem 1.5rem;
+    background-color: rgb(33, 243, 114);
+    border-radius: 0.5rem;
+    width: 90%;
+    text-shadow: 0px 4px 18px #2c3442;
+    transform: translateZ(50px)
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateX(-400px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0s; /* This will be overridden dynamically */
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#animate-on-scroll2 {
+    opacity: 0;
+    transform: translateY(300px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0s; /* This will be overridden dynamically */
+}
+
+#animate-on-scroll2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#animate-on-scroll3 {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease, box-shadow 0.8s ease;
+    transition-delay: 0s; /* This will be overridden dynamically */
+    width: 100%; 
+    background-color: #1f1f1f; 
+    border-radius: 20px; 
+    text-align: center; 
+    padding: 10px 20px; 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); 
+    overflow: hidden;
+    margin: 5px;
+}
+
+#animate-on-scroll3.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#animate-on-scroll4 {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease, box-shadow 0.8s ease, transform 0.4s ease;
+    transition-delay: 0s; /* This will be overridden dynamically */
+    width: 100%; 
+    background-color: #1f1f1f; 
+    border-radius: 20px; 
+    text-align: center; 
+    padding: 10px 20px; 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); 
+    overflow: hidden;
+    margin: 5px;
+}
+
+
+#animate-on-scroll4.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#animate-on-scroll5 {
+    opacity: 0;
+    transform: translateY(-150px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0s; /* This will be overridden dynamically */
+}
+
+#animate-on-scroll5.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-modern {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.btn-modern:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+#first-section h1 {
+    box-shadow: none; /* Removed the original box-shadow for a cleaner look */
+    filter: hue-rotate(0deg);
+}
+
+/* register */
+
+.register {
+    background-image: url('../static/images/6911313.jpg');
+    background-size: cover;
+}
+
+
+/* Forms */
+
+#inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 290px;
+    position: relative;
+    width: 200%;
+  }
+  
+#inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+    color: white;
+  }
+  
+#inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+  }
+  
+#inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(1.1);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: transparent;
+    color: white;
+  }
+  
+#inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(0, 188, 147);
+  }
+
+#description {
+    text-align: left;
+}
+
+.scroll-prompt {
+    position: absolute;
+    top: 650px;
+    left: 10%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    padding: 12px 20px;
+    background-color: #1f1f1f;
+    text-align: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.4s ease;
+    cursor: pointer;
+    opacity: 1; /* Fully visible by default */
+}
+
+.scroll-prompt h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hidden state when user scrolls */
+.scroll-prompt.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.button-container {
+    display: flex;
+    justify-content: center; /* Horizontally centers the button */
+    align-items: center; /* Vertically centers the button */
+    height: 100vh; /* Takes up the full height of the viewport */
+}
+
+/* Your existing button styles */
+#sign-up-button {
+    --primary-color: rgb(0, 188, 147);
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    cursor: pointer; /* Make it clear it's a button */
+}
+
+#sign-up-button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sign-up-button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+#sign-up-button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+#sign-up-button:hover {
+    background-color: var(--hover-color);
+}
+
+#sign-up-button:hover .arrow {
+    background: var(--secondary-color);
+}
+
+#sign-up-button:hover .arrow:before {
+    right: 0;
+}
+

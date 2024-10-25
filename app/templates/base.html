@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="text-light">
+    <header>
+        <div class="container d-flex justify-content-center">
+            <nav class="navbar navbar-expand-lg col-md-11" style="background-color: rgba(37, 35, 35, .3); position: fixed; border-radius: 10px; display: flex; align-items: center; margin-top: 10px; padding: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); z-index: 100;">
+                <div class="col-md-2 d-flex align-items-center" style="margin-top: 10px;">
+                    <h4><b><a href="{{ url_for('index') }}" style="color: white;">Prospera</a></b></h4>
+                </div>
+                <div class="col-md-7 d-flex align-items-center"></div>
+                <div class="col-md-3 d-flex justify-content-end">
+                    <button class="btn btn-sm btn-link text-light" type="button" id="loginButton" style="background-color: rgba(37, 35, 35, 0.4); border-radius: 10px; display: flex; align-items: center; height: 40px; margin-right: 10px; border: 1px solid #ccc;">
+                        <span class="ml-1" style="font-size: 16px"> <a href="{{ url_for('login') }}" style="color: white;">Login</a></span>
+                    </button>
+                    <button class="btn btn-sm btn-link text-light" type="button" id="createAccountButton" style="background-color: #4CAF50; border-radius: 10px; display: flex; align-items: center; height: 40px; color: #fff;">
+                        <span class="ml-1" style="font-size: 16px"><a href="{{ url_for('register') }}" style="color: white;">Create account</a></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- footer content will go here -->
+    </footer>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        .register {
+            background-image: url('../static/images/6150433.jpg');
+        }
+
+        #first-section {
+            background-image: url('../static/images/5590457.jpg');
+            background-size: cover;
+        }
+
+        #second-section {
+            background-image: url('../static/images/6912325.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        #third-section {
+            background-image: url('../static/images/SL_0210121_40570_75.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</body>
+</html>

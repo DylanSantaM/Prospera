@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+<div class=".">
+    <section>
+        <div id="first-section" class="d-flex justify-content-center align-items-center position-absolute w-100" style="height: 100vh; top: 0; left: 0; z-index: 1;">
+            <div class="text-center" style="padding: 20px;">
+                <h1 style="font-family: 'Poppins', sans-serif; font-weight: 800; letter-spacing: 1px; font-size: 4.5vw; color: #fff; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);">
+                    Prosper more<br> with 
+                    <b style="text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); font-family: 'Open Sans', sans-serif;">
+                        Prospera
+                    </b>
+                </h1>
+                
+                <button id="animate-on-scroll" data-tilt class="btn-modern">
+                    <a href="{{ url_for('register') }}" style="color: inherit; text-decoration: none; transform: translateZ(50px)">
+                        Get Started
+                    </a>
+                </button>
+            </div>
+            <div class="scroll-prompt bg-dark ">
+                <h3>Scroll down <span style="color: transparent;">..</span> <i class="fas fa-chevron-down"></i></h3>
+            </div>            
+        </div>
+        
+    </section>
+
+    <div class="col-md-12 d-flex justify-content-center align-items-center" id="second-section" style="height: 700px; position: absolute; top: 700px;">
+        <div class="animate-on-scroll" data-tilt style="background: rgba(0, 154, 69, 0.3); box-shadow: 0 10px 15px -3px rgba(0, 254, 68, 0.4), 0 4px 6px -4px rgba(33,150,243,.4);">
+            <div id="content">
+                <div id="title">Basic edition</div>
+                <div id="price">FREE</div>
+                <div id="description">Easy money tracking <br>
+                Easy salary tracking <br>
+                Easy expense tracking <br>
+                Monthly email reports <br>
+                So much more
+                </div>
+            </div>
+            <a href="{{ url_for('register') }}" style="color: inherit; text-decoration: none;" id="button1">Get started</a>
+        </div>
+    
+            <div class="col-md-1"></div>
+    
+            <div class="animate-on-scroll" data-tilt style="background:  rgba(183, 165, 0, 0.3); box-shadow: 0 10px 15px -3px rgba(255, 221, 0, 0.4),0 4px 6px -4px rgba(33,150,243,.4);">
+                <div id="content">
+                    <div id="title">Gold edition</div>
+                    <div id="price">FREE</div>
+                    <div id="description">Easy money tracking <br>
+                    Easy salary tracking <br>
+                    Easy expense tracking <br>
+                    Monthly email reports <br>
+                    So much more
+                    </div>
+                </div>
+                    <a href="{{ url_for('register') }}" style="color: inherit; text-decoration: none;" id="button1">
+                        Get started
+                    </a>
+            </div>
+    
+            <div class="col-md-1"></div>
+    
+            <div class="animate-on-scroll" data-tilt style="background:  rgba(0, 80, 130, 0.3); box-shadow: 0 10px 15px -3px rgba(2, 183, 255, 0.4),0 4px 6px -4px rgba(33,150,243,.4);">
+                <div id="content">
+                    <div id="title">Diamond edition</div>
+                    <div id="price">FREE</div>
+                    <div id="description">Easy money tracking <br>
+                    Easy salary tracking <br>
+                    Easy expense tracking <br>
+                    Monthly email reports <br>
+                    So much more
+                    </div>
+                </div>
+                    <a href="{{ url_for('register') }}" style="color: inherit; text-decoration: none;" id="button1">
+                        Get started
+                    </a>
+            </div>
+            <br>
+    </div>
+
+    <div class="col-md-12 d-flex flex-column" id="third-section" style="height: 700px; position: relative; top: 1400px;">
+        <!-- Main Heading -->
+        <h1 style="font-family: 'Poppins', sans-serif; font-weight: 800; text-align: center; margin-top: 50px;" id="animate-on-scroll2">
+            <b>Why use Prospera?</b>
+        </h1>
+
+        <br>
+        <br>
+    
+        <!-- Grid Rows -->
+        <div class="container">
+            <!-- First Row -->
+            <div class="row justify-content-center">
+                <div id="animate-on-scroll3" data-tilt class="col-md-3">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #ffffff; font-size: 28px; margin-bottom: 15px;">
+                        Ease of Use
+                    </h1>
+                    <p id="description" style="font-family: 'Roboto', sans-serif; color: #d1d1d1; font-size: 16px; line-height: 1.6;">
+                        Prospera is easy to use. There are many features to help you grow financially.
+                    </p>
+                </div>
+    
+                <div id="animate-on-scroll3" data-tilt class="col-md-3">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #ffffff; font-size: 28px; margin-bottom: 15px;">
+                        Secure Transactions
+                    </h1>
+                    <p id="description" style="font-family: 'Roboto', sans-serif; color: #d1d1d1; font-size: 16px; line-height: 1.6;">
+                        Prospera ensures all your transactions are encrypted and secure, giving you peace of mind.
+                    </p>
+                </div>
+    
+                <div id="animate-on-scroll3" data-tilt class="col-md-3">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #ffffff; font-size: 28px; margin-bottom: 15px;">
+                        Personalized Dashboard
+                    </h1>
+                    <p id="description" style="font-family: 'Roboto', sans-serif; color: #d1d1d1; font-size: 16px; line-height: 1.6;">
+                        Your personalized dashboard allows you to track your finances and investments with ease.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="row justify-content-center">
+                <div id="animate-on-scroll4" data-tilt class="col-md-3">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #ffffff; font-size: 28px; margin-bottom: 15px;">
+                        24/7 Support
+                    </h1>
+                    <p id="description" style="font-family: 'Roboto', sans-serif; color: #d1d1d1; font-size: 16px; line-height: 1.6;">
+                        Our team is available 24/7 to help you with any issues or questions you may have.
+                    </p>
+                </div>
+    
+                <div id="animate-on-scroll4" data-tilt class="col-md-3">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #ffffff; font-size: 28px; margin-bottom: 15px;">
+                        Financial Insights
+                    </h1>
+                    <p id="description" style="font-family: 'Roboto', sans-serif; color: #d1d1d1; font-size: 16px; line-height: 1.6;">
+                        Get detailed insights into your financial status and personalized recommendations for growth.
+                    </p>
+                </div>
+    
+                <div id="animate-on-scroll4" data-tilt class="col-md-3">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #ffffff; font-size: 28px; margin-bottom: 15px;">
+                        Multi-Device Access
+                    </h1>
+                    <p id="description" style="font-family: 'Roboto', sans-serif; color: #d1d1d1; font-size: 16px; line-height: 1.6;">
+                        Access your Prospera account from any device, whether you're on mobile, tablet, or desktop.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+{% endblock %}
