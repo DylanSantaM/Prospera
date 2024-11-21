@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="edge-glow glow-blue"></div>
+
+<div id="dashboard-background" class="d-flex justify-content-center align-items-center position-absolute w-100">
+
+    <div class="col-md-12" style="margin-top: 30px;" style="pointer-events: none; background: rgba(32, 32, 32, 0.5);">
+      <!-- Chart Section -->
+     <br> 
+      <h3 style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
+            My dashboard:
+      </h3>
+        <div class="chart-container">
+          <!-- Bar Chart -->
+          <div class="chart-box" style="margin-left: 30px;">
+            <canvas id="barChart"></canvas>
+          </div>
+      
+          <!-- Line Chart -->
+          <div class="chart-box">
+            <canvas id="lineChart"></canvas>
+          </div>
+        </div>
+
+    <div class="col-md-12" style="background: rgba(32, 32, 32, .9)">
+
+      <div class="col-md-12 d-flex" style="text-align: center;">
+
+        <h5 class="chart-title col-md-4">Expenses:</h3>
+          
+        <h5 class="chart-title col-md-4">Recent purchases:</h3>
+        
+        <h5 class="chart-title col-md-4">Savings:</h3>
+
+        </div>
+
+      <div class="col-md-12">
+        <div class="pie-chart-box col-md-4" style="width: 30%; height: 40%;">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <br>
+</div>
+
+{% endblock %}

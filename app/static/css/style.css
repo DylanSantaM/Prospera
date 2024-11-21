@@ -1,9 +1,32 @@
-html, body {
-    height: 100vh; /* Ensures the body takes up 100% of the viewport height */
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to top, rgb(0, 170, 255), #000000); /* Gradient background */
-    font-family: 'Inter', sans-serif; /* Apply font family */
+#first-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    flex-wrap: wrap;
+    /* Allows children to wrap within the container */
+    overflow: hidden;
+    /* Hides any potential overflow */
+}
+
+.hero-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 4rem;
+    /* Changed from fixed rem */
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    line-height: 1.2;
+}
+
+.hero-text b {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navbar-nav {
@@ -18,33 +41,19 @@ html, body {
 .btn {
     border-radius: 20px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
-}  
+}
 
 input::placeholder {
     color: white;
-    opacity: 1; /* Firefox */
+    opacity: 1;
+    /* Firefox */
 }
 
 /* Responsive Styles */
-@media (max-width: 800px) {
-    .navbar {
-        flex-direction: column; /* Stack navbar items */
-        align-items: center; /* Center align items */
-    }
-    .navbar-nav {
-        margin-left: 0; /* Remove margin */
-        margin-top: 10px; /* Add space between navbar and buttons */
-    }
-    .navbar-brand {
-        margin-bottom: 10px; /* Add space below brand */
-    }
-    #first-section, #second-section {
-        background-size: cover; /* Ensure sections are full-width */
-        height: 50vh; /* Adjust height for mobile */
-    }
-}
+
+
 
 /* Landing page */
 
@@ -77,7 +86,7 @@ input::placeholder {
     height: 400px;
     opacity: 0;
     transform: translateX(-400px);
-    transition: opacity 3s ease, transform 3s ease;
+    transition: opacity 10s ease, transform 3s ease;
     transform-style: preserve-3d;
 }
 
@@ -91,6 +100,7 @@ input::placeholder {
     font-weight: 800;
     font-size: 50px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
+    transform: translateZ(1000px);
 }
 
 #content #description {
@@ -126,83 +136,6 @@ input::placeholder {
     transform: translateZ(50px)
 }
 
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateX(-400px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    transition-delay: 0s; /* This will be overridden dynamically */
-}
-
-.animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#animate-on-scroll2 {
-    opacity: 0;
-    transform: translateY(300px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    transition-delay: 0s; /* This will be overridden dynamically */
-}
-
-#animate-on-scroll2.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#animate-on-scroll3 {
-    opacity: 0;
-    transform: translateX(150px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease, box-shadow 0.8s ease;
-    transition-delay: 0s; /* This will be overridden dynamically */
-    width: 100%; 
-    background-color: #1f1f1f; 
-    border-radius: 20px; 
-    text-align: center; 
-    padding: 10px 20px; 
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); 
-    overflow: hidden;
-    margin: 5px;
-}
-
-#animate-on-scroll3.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#animate-on-scroll4 {
-    opacity: 0;
-    transform: translateX(-150px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease, box-shadow 0.8s ease, transform 0.4s ease;
-    transition-delay: 0s; /* This will be overridden dynamically */
-    width: 100%; 
-    background-color: #1f1f1f; 
-    border-radius: 20px; 
-    text-align: center; 
-    padding: 10px 20px; 
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); 
-    overflow: hidden;
-    margin: 5px;
-}
-
-
-#animate-on-scroll4.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#animate-on-scroll5 {
-    opacity: 0;
-    transform: translateY(-150px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    transition-delay: 0s; /* This will be overridden dynamically */
-}
-
-#animate-on-scroll5.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .btn-modern {
     background-color: #4CAF50;
     border: none;
@@ -224,7 +157,8 @@ input::placeholder {
 }
 
 #first-section h1 {
-    box-shadow: none; /* Removed the original box-shadow for a cleaner look */
+    box-shadow: none;
+    /* Removed the original box-shadow for a cleaner look */
     filter: hue-rotate(0deg);
 }
 
@@ -244,8 +178,8 @@ input::placeholder {
     max-width: 290px;
     position: relative;
     width: 200%;
-  }
-  
+}
+
 #inputGroup input {
     font-size: 100%;
     padding: 0.8em;
@@ -255,8 +189,8 @@ input::placeholder {
     border-radius: 20px;
     width: 100%;
     color: white;
-  }
-  
+}
+
 #inputGroup label {
     font-size: 100%;
     position: absolute;
@@ -266,8 +200,8 @@ input::placeholder {
     pointer-events: none;
     transition: all 0.3s ease;
     color: rgb(100, 100, 100);
-  }
-  
+}
+
 #inputGroup :is(input:focus, input:valid)~label {
     transform: translateY(-50%) scale(1.1);
     margin: 0em;
@@ -275,11 +209,11 @@ input::placeholder {
     padding: 0.4em;
     background-color: transparent;
     color: white;
-  }
-  
+}
+
 #inputGroup :is(input:focus, input:valid) {
     border-color: rgb(0, 188, 147);
-  }
+}
 
 #description {
     text-align: left;
@@ -288,7 +222,7 @@ input::placeholder {
 .scroll-prompt {
     position: absolute;
     top: 650px;
-    left: 10%;
+    left: 50%;
     transform: translateX(-50%);
     border-radius: 20px;
     padding: 12px 20px;
@@ -298,7 +232,8 @@ input::placeholder {
     color: #fff;
     transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.4s ease;
     cursor: pointer;
-    opacity: 1; /* Fully visible by default */
+    opacity: 1;
+    /* Fully visible by default */
 }
 
 .scroll-prompt h3 {
@@ -332,12 +267,15 @@ input::placeholder {
 }
 
 
-/* From Uiverse.io by satyamchaudharydev */ 
+/* From Uiverse.io by satyamchaudharydev */
 .button-container {
     display: flex;
-    justify-content: center; /* Horizontally centers the button */
-    align-items: center; /* Vertically centers the button */
-    height: 100vh; /* Takes up the full height of the viewport */
+    justify-content: center;
+    /* Horizontally centers the button */
+    align-items: center;
+    /* Vertically centers the button */
+    height: 100vh;
+    /* Takes up the full height of the viewport */
 }
 
 /* Your existing button styles */
@@ -358,7 +296,13 @@ input::placeholder {
     align-items: center;
     gap: 0.6em;
     font-weight: bold;
-    cursor: pointer; /* Make it clear it's a button */
+    cursor: pointer;
+    /* Make it clear it's a button */
+}
+
+.sign-up-button.show {
+    display: block;
+    opacity: 1;
 }
 
 #sign-up-button .arrow-wrapper {
@@ -402,3 +346,312 @@ input::placeholder {
     right: 0;
 }
 
+
+.typewriter-container {
+    font-size: 24px;
+    white-space: nowrap;
+    border-right: 2px solid;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.cbx {
+    position: relative;
+    top: 1px;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #c8ccd4;
+    border-radius: 3px;
+    vertical-align: middle;
+    transition: background 0.1s ease;
+    cursor: pointer;
+    display: block;
+}
+
+.cbx:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    width: 7px;
+    height: 14px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: all 0.3s ease;
+    transition-delay: 0.15s;
+}
+
+.lbl {
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#cbx:checked~.cbx {
+    border-color: transparent;
+    background: #6871f1;
+    animation: jelly 0.6s ease;
+}
+
+#cbx:checked~.cbx:after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+}
+
+.cntr {
+    position: relative;
+}
+
+@keyframes jelly {
+    from {
+        transform: scale(1, 1);
+    }
+
+    30% {
+        transform: scale(1.25, 0.75);
+    }
+
+    40% {
+        transform: scale(0.75, 1.25);
+    }
+
+    50% {
+        transform: scale(1.15, 0.85);
+    }
+
+    65% {
+        transform: scale(0.95, 1.05);
+    }
+
+    75% {
+        transform: scale(1.05, 0.95);
+    }
+
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+.hidden-xs-up {
+    display: none !important;
+}
+
+
+
+/* About section */
+.shape {
+    position: absolute;
+    opacity: 0.8;
+    animation: drift 10s ease-in-out infinite alternate;
+    background: transparent;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow for depth */
+    transition: opacity 0.9s ease;
+    transition: all 1s;
+}
+
+.shape:hover {
+    filter: hue-rotate(180deg);
+    transition: all 1s;
+}
+
+/* Irregular Circle (Blob) */
+.blob {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #ffab91, #ff7043);
+    border-radius: 60% 40% 50% 50% / 40% 50% 60% 50%;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+/* Asymmetric Rectangle */
+.asym-rect {
+    width: 70px;
+    height: 50px;
+    background: linear-gradient(135deg, #ce93d8, #ba68c8);
+    clip-path: polygon(10% 0%, 100% 10%, 80% 100%, 0% 90%);
+    top: 35%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+/* Irregular Triangle */
+.irreg-triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 90px solid #a5d6a7;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    top: 55%;
+    left: 40%;
+    animation-delay: 2s;
+    transform: rotate(-10deg);
+}
+
+/* Abstract Hexagon */
+.abstract-hexagon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #ffcc80, #ffb74d);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    top: 20%;
+    left: 60%;
+    animation-delay: 3s;
+    transform: rotate(5deg);
+}
+
+/* Star Burst (Polygon) */
+.star-burst {
+    width: 60px;
+    height: 60px;
+    background: #f48fb1;
+    clip-path: polygon(50% 0%, 60% 40%, 100% 40%, 70% 60%, 80% 100%, 50% 75%, 20% 100%, 30% 60%, 0% 40%, 40% 40%);
+    top: 5%;
+    left: 80%;
+    animation-delay: 0.5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    /* Glow effect */
+}
+
+/* Oblong Blob */
+.oblong-blob {
+    width: 90px;
+    height: 50px;
+    background: radial-gradient(circle at 20% 20%, #81d4fa, #29b6f6);
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    top: 70%;
+    left: 85%;
+    animation-delay: 4s;
+    transform: rotate(-5deg);
+}
+
+/* Keyframes for smoother, more varied movement */
+@keyframes drift {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(70px, 70px) rotate(60deg);
+    }
+}
+
+/* edge glows */
+:root {
+    --glow-color-right: rgba(0, 188, 147, 0.6);
+    --glow-color-left: rgba(141, 149, 0, 0.6);
+    --glow-color-bottom: rgba(0, 213, 255, 0.6);
+    --glow-color-blue: rgba(0, 225, 255, 0.6);
+    /* Orange glow color */
+}
+
+.edge-glow {
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    /* Keep glow elements behind content */
+    animation: pulse 20s infinite;
+    /* Add pulsing effect */
+}
+
+.edge-glow:hover {
+    pointer-events: none;
+    opacity: 1;
+
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        filter: blur(0px);
+        width: 25vw;
+    }
+
+    50% {
+        opacity: 1;
+        filter: blur(8px);
+        width: 50vw;
+    }
+}
+
+@keyframes pulse2 {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        filter: blur(0px);
+    }
+
+    50% {
+        opacity: 1;
+        filter: blur(15px);
+    }
+}
+
+/* Right glow */
+.glow-right {
+    right: 0;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background: radial-gradient(circle at 90% 50%, var(--glow-color-right), rgba(239, 96, 96, 0) 70%);
+    animation-delay: 0s;
+    /* Start immediately */
+}
+
+/* Left glow */
+.glow-left {
+    left: 0;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background: radial-gradient(circle at 10% 50%, var(--glow-color-left), rgba(0, 0, 0, 0) 70%);
+    animation-delay: 3s;
+    /* Start 1 second later */
+}
+
+/* Bottom glow */
+.glow-bottom {
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 60vh;
+    background: radial-gradient(circle at 50% 90%, var(--glow-color-bottom), rgba(0, 0, 0, 0) 70%);
+    animation: pulse2 20s infinite;
+    animation-delay: 5s;
+}
+
+.glow-blue {
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 90%, var(--glow-color-blue), rgba(0, 0, 0, 0) 70%);
+    animation: pulse2 10s infinite;
+}

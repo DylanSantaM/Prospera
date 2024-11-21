@@ -2,36 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>{% block title %}{% endblock %}</title>
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" /> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/scrolls.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/basics.css') }}">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 
-<body class="text-light">
+<body class="text-light" style="background-color: rgb(1, 1, 1);">
     <header>
         <div class="container d-flex justify-content-center">
-            <nav class="navbar navbar-expand-lg col-md-11" style="background-color: rgba(37, 35, 35, .3); position: fixed; border-radius: 10px; display: flex; align-items: center; margin-top: 10px; padding: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); z-index: 100;">
-                <div class="col-md-2 d-flex align-items-center" style="margin-top: 10px;">
-                    <h4><b><a href="{{ url_for('index') }}" style="color: white;">Prospera</a></b></h4>
-                </div>
-                <div class="col-md-7 d-flex align-items-center"></div>
-                <div class="col-md-3 d-flex justify-content-end">
-                    <button class="btn btn-sm btn-link text-light" type="button" id="loginButton" style="background-color: rgba(37, 35, 35, 0.4); border-radius: 10px; display: flex; align-items: center; height: 40px; margin-right: 10px; border: 1px solid #ccc;">
-                        <span class="ml-1" style="font-size: 16px"> <a href="{{ url_for('login') }}" style="color: white;">Login</a></span>
-                    </button>
-                    <button class="btn btn-sm btn-link text-light" type="button" id="createAccountButton" style="background-color: #4CAF50; border-radius: 10px; display: flex; align-items: center; height: 40px; color: #fff;">
-                        <span class="ml-1" style="font-size: 16px"><a href="{{ url_for('register') }}" style="color: white;">Create account</a></span>
-                    </button>
-                </div>
-            </nav>
+
+            <div class="edge-glow"></div>
+
+
+            <nav class="navbar navbar-expand-lg col-md-11 mx-auto" 
+     style="background-color: rgba(37, 35, 35, .3); position: fixed; border-radius: 10px; margin-top: 10px; padding: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); z-index: 100;">
+  
+  <div class="container-fluid">
+    <!-- Brand Name -->
+    <a class="navbar-brand text-white" href="{{ url_for('index') }}">
+      <h4><b>Prospera</b></h4>
+    </a>
+
+    <!-- Hamburger Menu for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" 
+            style="border: 1px solid white;">
+      <span class="navbar-toggler-icon text-white"></span>
+    </button>
+
+    <!-- Collapsible Menu Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Empty space in larger screens -->
+      <div class="col-md-9"></div>
+
+      <!-- Login and Create Account Buttons -->
+      <div class="d-flex justify-content-end mt-2 mt-lg-0">
+        <a href="{{ url_for('login') }}" class="text-decoration-none me-2">
+          <button class="btn btn-sm btn-link text-light" id="loginButton" 
+                  style="background-color: rgba(37, 35, 35, 0.4); border-radius: 10px; height: 40px; border: 1px solid #ccc;">
+            <span class="ml-1 text-white" style="font-size: 16px;">Login</span>
+          </button>
+        </a>
+
+        <a href="{{ url_for('register') }}" class="text-decoration-none">
+          <button class="btn btn-sm btn-link text-light" id="createAccountButton" 
+                  style="background-color: #4CAF50; border-radius: 10px; height: 40px; color: #fff;">
+            <span class="ml-1 text-white" style="font-size: 16px;">Create account</span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
         </div>
     </header>
 
@@ -41,44 +80,22 @@
     </main>
 
     <footer>
-        <!-- footer content will go here -->
+        <!-- Footer content here -->
     </footer>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+    <script src="three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <style>
-        .register {
-            background-image: url('../static/images/6150433.jpg');
-        }
-
-        #first-section {
-            background-image: url('../static/images/5590457.jpg');
-            background-size: cover;
-        }
-
-        #second-section {
-            background-image: url('../static/images/6912325.jpg');
-            background-size: cover;
-            background-position: center;
-            width: 100vw;
-            height: 100vh;
-        }
-        #third-section {
-            background-image: url('../static/images/SL_0210121_40570_75.jpg');
-            background-size: cover;
-            background-position: center;
-            width: 100vw;
-            height: 100vh;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Inline Styles -->
 </body>
 </html>

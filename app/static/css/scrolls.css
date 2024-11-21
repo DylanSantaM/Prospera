@@ -1,0 +1,137 @@
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateX(-400px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0s; /* This will be overridden dynamically */
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#animate-on-scroll2 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0s; /* This will be overridden dynamically */
+}
+
+#animate-on-scroll2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#animate-on-scroll3 {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease, box-shadow 0.8s ease;
+    transition-delay: 0s; /* This will be overridden dynamically */
+    width: 100%; 
+    background-color: #1f1f1f; 
+    border-radius: 20px; 
+    text-align: center; 
+    padding: 10px 20px; 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); 
+    overflow: hidden;
+    margin: 5px;
+}
+
+#animate-on-scroll3.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#animate-on-scroll4 {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease, box-shadow 0.8s ease, transform 0.4s ease;
+    transition-delay: 0s; /* This will be overridden dynamically */
+    width: 100%; 
+    background-color: #1f1f1f; 
+    border-radius: 20px; 
+    text-align: center; 
+    padding: 10px 20px; 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); 
+    overflow: hidden;
+    margin: 5px;
+}
+
+
+#animate-on-scroll4.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#animate-on-scroll5 {
+    opacity: 0;
+    transform: translateY(-150px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition-delay: 0s; /* This will be overridden dynamically */
+}
+
+#animate-on-scroll5.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#animate-on-scroll6 {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s;
+    transition-delay: 0s; /* This will be overridden dynamically */
+}
+
+#animate-on-scroll6.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#animate-on-scroll7 {
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: 0s; /* This will be overridden dynamically */
+}
+
+#animate-on-scroll7.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#animate-on-scroll8 {
+    opacity: 0;
+    transform: translateX(0px);
+    transition: all 3s;
+    transition-delay: 3s; /* This will be overridden dynamically */
+}
+
+#animate-on-scroll8.visible {
+    opacity: 1;
+    transform: translateX(-200);
+}
+
+.arrow2 {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    font-size: 2rem;
+    color: #f2f2f2;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    cursor: pointer;
+  }
+  
+  .content {
+    margin-top: 50px;
+    width: 90%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2;
+  }
+
+.char {
+    opacity: 0;
+    transform: translateY(215px);
+    transform: translateX(215px);
+    transition: transform .5s;
+}

@@ -1,0 +1,33 @@
+html, body {
+    height: 100vh; /* Ensures the body takes up 100% of the viewport height */
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; /* Apply font family */
+}
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 2rem; /* Shrink font size for smaller screens */
+    }
+
+    #sign-up-button-text {
+        font-size: 5rem; /* Shrink font size for smaller screens */
+    }
+
+    .text-center {
+        padding: 10px;
+    }
+}
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+body::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+* {
+    box-sizing: border-box;
+}
