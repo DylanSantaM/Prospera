@@ -1,27 +1,47 @@
 .chart-container {
-    display: flex;
-    height: 100%; /* Full height */
-    background: rgba(32, 32, 32, 0.5);
-  }
-  .chart-box {
-    flex: 1 1 48%; /* Each chart takes half the width in the first row */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  .pie-chart-box {
-    flex: 1 1 100%; /* Pie chart spans the entire row */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  canvas {
-    width: 90%; /* Adjust the chart width */
-    height: 90%; /* Adjust the chart height */
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  height: 300px;
+}
 
-  
+.chart-box {
+  width: 48%;
+}
+
+.pie-chart-box {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+}
+
+thead {
+  background-color: rgb(48, 48, 48);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(48, 48, 48, 0.8);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(48, 48, 48, 0.6);
+}
+
+.chart-title {
+  color: white;
+}
+
+#dashboard-background {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(32, 32, 32, 0.7);
+}

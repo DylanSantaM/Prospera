@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('.sign-up-button');
+    const button = document.querySelector('.sign-up-button2');
     
     if (!button) return; // Safeguard if the element is not found
 

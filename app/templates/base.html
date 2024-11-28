@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>{% block title %}{% endblock %}</title>
+    <title> {{ title }}</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon" />
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css">
@@ -24,15 +25,11 @@
 <body class="text-light" style="background-color: rgb(1, 1, 1);">
     <header>
         <div class="container d-flex justify-content-center">
-
-            <div class="edge-glow"></div>
-
-
             <nav class="navbar navbar-expand-lg col-md-11 mx-auto" 
      style="background-color: rgba(37, 35, 35, .3); position: fixed; border-radius: 10px; margin-top: 10px; padding: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); z-index: 100;">
   
+  {% if current_user.is_anonymous %}
   <div class="container-fluid">
-    <!-- Brand Name -->
     <a class="navbar-brand text-white" href="{{ url_for('index') }}">
       <h4><b>Prospera</b></h4>
     </a>
@@ -67,6 +64,24 @@
       </div>
     </div>
   </div>
+
+  {% else %}
+
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="{{ url_for('dashboard') }}">
+      <h4><b>Prospera</b></h4>
+    </a>
+
+    <!-- Hamburger Menu for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" 
+            style="border: 1px solid white;">
+      <span class="navbar-toggler-icon text-white"></span>
+    </button>
+  </div>
+
+  {% endif %}
+
 </nav>
 
 

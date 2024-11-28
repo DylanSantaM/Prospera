@@ -174,10 +174,10 @@ input::placeholder {
 
 #inputGroup {
     font-family: 'Segoe UI', sans-serif;
-    margin: 1em 0 1em 0;
+    margin: 1em 0;
     max-width: 290px;
     position: relative;
-    width: 200%;
+    width: 100%; /* Adjusted to ensure proper width control */
 }
 
 #inputGroup input {
@@ -189,30 +189,34 @@ input::placeholder {
     border-radius: 20px;
     width: 100%;
     color: white;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
 #inputGroup label {
     font-size: 100%;
     position: absolute;
-    left: 0;
-    padding: 0.8em;
-    margin-left: 0.5em;
+    top: 50%; /* Centers the label vertically by default */
+    left: 1em; /* Slight adjustment for label padding */
+    transform: translateY(-50%); /* Vertically aligns with input */
     pointer-events: none;
     transition: all 0.3s ease;
-    color: rgb(100, 100, 100);
+    color: white;
+    background-color: transparent;
+    padding: 0 0.5em; /* Reduced padding for cleaner layout */
+    font-size: 1rem;
 }
 
-#inputGroup :is(input:focus, input:valid)~label {
-    transform: translateY(-50%) scale(1.1);
-    margin: 0em;
-    margin-left: 1.3em;
-    padding: 0.4em;
-    background-color: transparent;
+#inputGroup :is(input:focus, input:valid) ~ label {
+    transform: translateY(-2.7em) scale(0.9); /* Moves label above */
+    padding: 0.4em; /* Maintains consistency with initial padding */
+    margin: 0;
+    margin-left: 10px;
+    background-color: transparent; /* Avoid any background conflicts */
     color: white;
 }
 
 #inputGroup :is(input:focus, input:valid) {
-    border-color: rgb(0, 188, 147);
+    border-color: rgb(0, 188, 147); /* Matches design for focus/valid */
 }
 
 #description {

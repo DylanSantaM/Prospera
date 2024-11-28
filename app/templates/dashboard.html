@@ -6,40 +6,66 @@
 
 <div id="dashboard-background" class="d-flex justify-content-center align-items-center position-absolute w-100">
 
-    <div class="col-md-12" style="margin-top: 30px;" style="pointer-events: none; background: rgba(32, 32, 32, 0.5);">
+    <div class="col-md-12" style="margin-top: 60px;" style="pointer-events: none; background: rgba(32, 32, 32, 0.5); border-radius: 100rem;">
       <!-- Chart Section -->
      <br> 
       <h3 style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
             My dashboard:
       </h3>
-        <div class="chart-container">
-          <!-- Bar Chart -->
-          <div class="chart-box" style="margin-left: 30px;">
-            <canvas id="barChart"></canvas>
-          </div>
-      
-          <!-- Line Chart -->
-          <div class="chart-box">
-            <canvas id="lineChart"></canvas>
-          </div>
+      <div class="chart-container">
+        <!-- Line Chart -->
+        <div class="chart-box">
+          <canvas id="lineChart"></canvas>
         </div>
+      
+        <!-- Bar Chart -->
+        <div class="chart-box">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
 
-    <div class="col-md-12" style="background: rgba(32, 32, 32, .9)">
+      <br>
+
+    <div class="col-md-12">
 
       <div class="col-md-12 d-flex" style="text-align: center;">
 
-        <h5 class="chart-title col-md-4">Expenses:</h3>
+        <h5 class="chart-title col-md-4" style="padding: 5px;">Expenses:</h3>
           
-        <h5 class="chart-title col-md-4">Recent purchases:</h3>
+        <h5 class="chart-title col-md-6" style="padding: 5px;">Recent purchases:</h3>
         
-        <h5 class="chart-title col-md-4">Savings:</h3>
+        <h5 class="chart-title col-md-2" style="padding: 5px;">Savings:</h3>
 
         </div>
 
-      <div class="col-md-12">
-        <div class="pie-chart-box col-md-4" style="width: 30%; height: 40%;">
+      <div class="col-md-12 d-flex">
+
+        <div class="pie-chart-box col-md-4" style="width: 30%; height: 40%; ">
           <canvas id="pieChart"></canvas>
         </div>
+        
+        <div class="col-md-6 justify-content-center" style="text-align: center; align-items: center;">
+          <table style="align-items: center;">
+            <thead style="height: 30px; background-color: rgb(48, 48, 48); border-radius: 50%;">
+              <tr>
+                <th class="col-md-2">Name</th>
+                <th class="col-md-2">Catagory</th>
+                <th class="col-md-2">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="col-md-2">Pizza</th>
+                <th class="col-md-2">Food</th>
+                <th class="col-md-2">$12.90</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+
       </div>
     </div>
     </div>
