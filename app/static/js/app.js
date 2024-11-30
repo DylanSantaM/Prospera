@@ -120,14 +120,17 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Charts //
-
 document.addEventListener('DOMContentLoaded', () => {
     const textElement = document.querySelector('#HeroText');
-    
 
     if (textElement) {
+        // Split the text into individual characters
         const text = new SplitType('#HeroText', { types: 'chars' });
+
+        // Ensure all characters start with teal color
+        text.chars.forEach((char) => {
+            char.style.color = 'teal';
+        });
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -138,13 +141,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             opacity: 0,
                             y: 50,
                             x: 50,
+                            color: 'teal', // Explicit starting color
                         },
                         {
                             opacity: 1,
                             y: 0,
                             x: 0,
-                            stagger: 0.05,
-                            duration: 0.1,
+                            color: 'white', // Transition to white
+                            stagger: 0.1, // Increase stagger for clarity
+                            duration: 1, // Extend duration for smoother animation
                             ease: 'power2.out',
                         }
                     );
@@ -157,6 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(textElement);
     }
 });
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('.sign-up-button2');

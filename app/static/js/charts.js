@@ -111,3 +111,23 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   new Chart(pieCtx, pieConfig);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.counter');
+
+  counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const updateCount = () => {
+          const current = +counter.innerText;
+          const increment = Math.ceil(target / 50); // Adjust speed
+
+          if (current < target) {
+              counter.innerText = current + increment;
+              setTimeout(updateCount, 20); // Adjust interval
+          } else {
+              counter.innerText = target;
+          }
+      };
+      updateCount();
+  });
+});

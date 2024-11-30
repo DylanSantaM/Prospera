@@ -659,3 +659,9 @@ input::placeholder {
     background: radial-gradient(circle at 50% 90%, var(--glow-color-blue), rgba(0, 0, 0, 0) 70%);
     animation: pulse2 10s infinite;
 }
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }
