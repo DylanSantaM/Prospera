@@ -6,7 +6,7 @@
     <div id="register-background" class="d-flex justify-content-center col-md-10 text-center" 
     style="border-radius: 10px; height: 625px; display: flex; align-items: center; margin-left: 15%;">
     <div class="d-flex justify-content-center">
-      <form method="POST" action="{{ url_for('register') }}">
+      <form method="POST" action="{{ url_for('main.register') }}">
         {{ form.hidden_tag() }} <!-- CSRF token -->
 
         <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 1px; color: white; 
@@ -70,7 +70,7 @@
         </div>
         <br>
         <h5 style="color: #676767; font-size: 16px;">
-            <a href="{{ url_for('login') }}" style="color: #676767;">Already have an account?</a>
+            <a href="{{ url_for('main.login') }}" style="color: #676767;">Already have an account?</a>
         </h5>
     </form>
         </div>

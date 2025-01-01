@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif; /* Apply font family */
+    
 }
 @media (max-width: 480px) {
     .hero-text {

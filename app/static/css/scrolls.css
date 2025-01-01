@@ -131,7 +131,7 @@
 
 .char {
     opacity: 0;
-    transform: translateY(215px);
-    transform: translateX(215px);
+    transform: translateY(50px);
+    transform: translateX(50px);
     transition: transform .5s;
 }

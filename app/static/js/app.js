@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Split the text into individual characters
         const text = new SplitType('#HeroText', { types: 'chars' });
 
-        // Ensure all characters start with teal color
+        // Apply initial teal color to all characters
         text.chars.forEach((char) => {
             char.style.color = 'teal';
         });
@@ -135,25 +135,48 @@ document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    gsap.fromTo(
+                    // Create a timeline to control animation phases with a 1-second delay
+                    const timeline = gsap.timeline({
+                        defaults: { ease: 'power1.out' },
+                        delay: .8, // Add half a second delay before animations begin
+                    });
+
+                    // Animate teal color duration
+                    timeline.to(text.chars, {
+                        color: 'white', // Transition from teal to white
+                        duration: 1, // Teal duration
+                        stagger: 0.05,
+                    });
+
+                    // Animate movement and opacity
+                    timeline.fromTo(
                         text.chars,
                         {
                             opacity: 0,
                             y: 50,
                             x: 50,
-                            color: 'teal', // Explicit starting color
                         },
                         {
                             opacity: 1,
                             y: 0,
                             x: 0,
-                            color: 'white', // Transition to white
-                            stagger: 0.1, // Increase stagger for clarity
-                            duration: 1, // Extend duration for smoother animation
-                            ease: 'power2.out',
-                        }
+                            duration: 0.1, // Main animation duration
+                            stagger: 0.05,
+                        },
+                        '<' // Sync with the start of the color animation
                     );
-                    // Stop observing after animation has run once
+
+                    // Initialize Tilt.js for each character after animation completes
+                    timeline.call(() => {
+                        text.chars.forEach((char) => {
+                            VanillaTilt.init(char, {
+                                max: 30, // Maximum tilt
+                                speed: 400, // Speed of tilt effect
+                            });
+                        });
+                    });
+
+                    // Stop observing after animation runs once
                     observer.unobserve(entry.target);
                 }
             });
@@ -162,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(textElement);
     }
 });
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -182,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     button.style.opacity = '1';
                     button.style.transform = 'scale(1)';
-                }, 1200); // 2000 milliseconds = 2 seconds
+                }, 2000); // 2000 milliseconds = 2 seconds
 
                 observer.unobserve(button); // Stop observing once the animation is triggered
             }
@@ -192,3 +214,75 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(button);
 });
 
+
+const moneyContainer = document.getElementById('money-container');
+
+function createMoney() {
+  const money = document.createElement('div');
+  money.classList.add('money');
+  money.textContent = '$';
+
+  // Randomize the starting position and rotation
+  const startX = Math.random() * window.innerWidth; // Random horizontal position
+  const startY = Math.random() * window.innerHeight; // Random vertical position
+  const startRotation = Math.random() * 360; // Random rotation
+
+  money.style.left = `${startX}px`;
+  money.style.top = `${startY}px`;
+  money.style.transform = `rotate(${startRotation}deg)`;
+
+  moneyContainer.appendChild(money);
+
+  // Remove the money element after the animation ends
+  money.addEventListener('animationend', () => {
+    money.remove();
+  });
+}
+
+function throwMoney() {
+  for (let i = 0; i < 20; i++) {
+    setTimeout(createMoney, i * 300);
+  }
+}
+
+// Set up Intersection Observer to detect when #money-container is visible
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Start throwing money and repeat it forever
+      throwMoney();
+      setInterval(throwMoney, 5000); // Repeat every 3 seconds
+      observer.unobserve(moneyContainer); // Stop observing
+    }
+  });
+}, { threshold: 0.9 }); // Trigger when at least 90% of the element is visible
+
+// Fade in the money-container after 2 seconds
+setTimeout(() => {
+  moneyContainer.style.opacity = '1';
+}, 2000);
+
+observer.observe(moneyContainer);
+
+
+// loading screen
+window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loading-screen");
+    const mainContent = document.getElementById("main-content");
+  
+    // Hide the loading screen after a delay
+    setTimeout(() => {
+      loadingScreen.style.opacity = "0";
+      loadingScreen.style.transition = "opacity 0.5s ease";
+  
+      // Remove the loading screen from the DOM after fade-out
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+        mainContent.style.display = "block";
+  
+        // Trigger animations
+        document.body.style.overflow = "auto"; // Allow scrolling
+      }, 500);
+    }, 1000); // Adjust delay as needed
+  });
+  

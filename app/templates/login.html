@@ -3,7 +3,7 @@
 {% block content %}
 <div id="login-background" class="d-flex justify-content-center align-items-center" style="height: 100vh; width: 100vw; display: flex; text-align: center;">
     <div class="d-flex flex-column justify-content-center align-items-center" style="background-color: #333; padding: 30px; border-radius: 10px;">
-        <form method="POST" action="{{ url_for('login') }}">
+        <form method="POST" action="{{ url_for('main.login') }}">
             {{ form.hidden_tag() }}
             <h1 style="font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 1px; color: white; text-shadow: 1px solid black; background-color: transparent;" id="animate-on-scroll5">Log in</h1>
 
@@ -48,7 +48,7 @@
             <br>
             <br>
 
-            <h5 style='color: #676767; font-size: 16px;'><a href="{{ url_for('register') }}" style='color: #676767;'>Dont have an account?</a></h5>
+            <h5 style='color: #676767; font-size: 16px;'><a href="{{ url_for('main.register') }}" style='color: #676767;'>Dont have an account?</a></h5>
             <h5 style='color: #676767; font-size: 16px;'><a href="#" style='color: #676767;'>Forgot password</a></h5>
         </form>
     </div>
